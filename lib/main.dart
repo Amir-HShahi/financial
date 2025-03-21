@@ -5,6 +5,7 @@ import 'package:financial/view/utility/scale.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  RootJailbreakDetection.handleSecurity();
   runApp(const MyApp());
 }
 
@@ -13,7 +14,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RootJailbreakDetection.handleSecurity();
     Scale.initScreenData(context);
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,

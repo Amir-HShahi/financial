@@ -1,6 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/services.dart';
 import 'package:root_jailbreak_sniffer/rjsniffer.dart';
-
 
 abstract class RootJailbreakDetection {
   static Future<bool> checkRootJailbreak() async {
@@ -15,8 +16,6 @@ abstract class RootJailbreakDetection {
 
   static Future<bool> checkDebugging() async {
     bool amIDebugging = await Rjsniffer.amIDebugged() ?? false;
-    print("---------------------------------");
-    print(amIDebugging);
     return amIDebugging;
   }
 
@@ -24,8 +23,9 @@ abstract class RootJailbreakDetection {
     bool emulator = await checkEmulator();
     bool rootJailbreak = await checkRootJailbreak();
     bool debugging = await checkDebugging();
-    if (emulator || rootJailbreak || debugging) {
+    if (rootJailbreak) {
       SystemNavigator.pop();
+      exit(0);
     }
   }
 }
