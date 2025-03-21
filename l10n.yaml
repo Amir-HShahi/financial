@@ -1,0 +1,14 @@
+# Directory containing ARB files
+arb-dir: lib/localization/translations
+
+# Template ARB file
+template-arb-file: app_en.arb
+
+# Generated localization filename
+output-localization-file: app_localizations.dart
+
+# Path to save the generated files
+output-dir: lib/localization
+
+# Explicitly disable the synthetic package
+synthetic-package: false

@@ -1,0 +1,56 @@
+name: financial
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  lottie: ^3.3.1
+  flutter_svg: ^2.0.17
+  flutter_bloc: ^9.1.0
+  root_jailbreak_sniffer: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/lottie_jsons/
+    - assets/images/
+    - assets/icons/
+  fonts:
+    - family: roboto
+      fonts:
+        - asset: assets/fonts/english/Roboto-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/english/Roboto-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/english/Roboto-Light.ttf
+          weight: 300
+        - asset: assets/fonts/english/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/english/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/english/Roboto-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/english/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/english/Roboto-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/english/Roboto-Black.ttf
+          weight: 900

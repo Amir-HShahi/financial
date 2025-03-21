@@ -1,0 +1,16 @@
+{
+  "helloWorld": "Hello World!",
+  "sayHello": "Hello, {name}!",
+  "@sayHello": {
+    "description": "home page app bar hello to user",
+    "placeHolders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "haveANiceDay": "Have a nice day!",
+  "@haveANiceDay": {
+    "description": "home page app bar greeting to user"
+  }
+}
