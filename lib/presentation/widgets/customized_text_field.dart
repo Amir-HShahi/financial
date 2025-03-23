@@ -1,8 +1,9 @@
 import 'package:financial/core/utils/design_colors.dart';
 import 'package:financial/core/utils/scale.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomizedTextField extends StatelessWidget {
+class CustomizedTextField extends StatefulWidget {
   final TextEditingController controller;
   final bool? toggleableVisibility;
   final String title;
@@ -16,6 +17,19 @@ class CustomizedTextField extends StatelessWidget {
   });
 
   @override
+  State<CustomizedTextField> createState() => _CustomizedTextFieldState();
+}
+
+class _CustomizedTextFieldState extends State<CustomizedTextField> {
+  bool isVisible = false;
+
+  void toggleVisibility() {
+    setState(() {
+      isVisible = !isVisible;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final fontSize = Scale.height(16);
 
@@ -23,7 +37,7 @@ class CustomizedTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          title,
+          widget.title,
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: Scale.height(18),
@@ -33,8 +47,9 @@ class CustomizedTextField extends StatelessWidget {
         ),
         SizedBox(height: Scale.height(8)),
         TextField(
-          controller: controller,
+          controller: widget.controller,
           cursorColor: DesignColors.grey,
+          obscureText: isVisible,
           style: TextStyle(
             fontSize: fontSize,
             height: 1,
@@ -43,6 +58,10 @@ class CustomizedTextField extends StatelessWidget {
           ),
           decoration: InputDecoration(
             isDense: true,
+            suffix: _Suffix(
+              isVisible: isVisible,
+              toggleVisibility: toggleVisibility,
+            ),
             contentPadding: EdgeInsets.symmetric(
               horizontal: Scale.width(16),
               vertical: Scale.height(12),
@@ -96,7 +115,7 @@ class CustomizedTextField extends StatelessWidget {
               ),
               borderRadius: BorderRadius.all(Radius.circular(Scale.height(16))),
             ),
-            hintText: hintText,
+            hintText: widget.hintText,
             hintStyle: TextStyle(
               fontSize: fontSize,
               height: 1,
@@ -106,6 +125,24 @@ class CustomizedTextField extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _Suffix extends StatelessWidget {
+  final bool isVisible;
+  final Function() toggleVisibility;
+  const _Suffix({required this.isVisible, required this.toggleVisibility});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: toggleVisibility,
+      child: SvgPicture.asset(
+        isVisible ? 'assets/icons/closed_eye.svg' : 'assets/icons/open_eye.svg',
+        height: Scale.height(14),
+      ),
     );
   }
 }
