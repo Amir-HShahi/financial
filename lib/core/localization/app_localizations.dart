@@ -206,6 +206,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign up.'**
   String get signUpHighlight;
+
+  /// No description provided for @accountDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Details'**
+  String get accountDetails;
+
+  /// No description provided for @saveChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Changes'**
+  String get saveChanges;
+
+  /// No description provided for @changePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Password'**
+  String get changePassword;
+
+  /// No description provided for @currentPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Password'**
+  String get currentPassword;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New Password'**
+  String get newPassword;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPassword;
+
+  /// No description provided for @leavingMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Oh no! You’re leaving...\nAre you sure?'**
+  String get leavingMessage;
+
+  /// No description provided for @justKidding.
+  ///
+  /// In en, this message translates to:
+  /// **'Naah, Just Kidding'**
+  String get justKidding;
+
+  /// No description provided for @confirmLogout.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, Log Me Out'**
+  String get confirmLogout;
+
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get signOut;
+
+  /// No description provided for @addIncome.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Income'**
+  String get addIncome;
+
+  /// No description provided for @howMuchReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'How much did you receive today?'**
+  String get howMuchReceived;
+
+  /// No description provided for @add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get add;
+
+  /// No description provided for @addExpense.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Expense'**
+  String get addExpense;
+
+  /// No description provided for @howMuchSpent.
+  ///
+  /// In en, this message translates to:
+  /// **'How much did you spend today?'**
+  String get howMuchSpent;
+
+  /// No description provided for @forWhat.
+  ///
+  /// In en, this message translates to:
+  /// **'For what?'**
+  String get forWhat;
+
+  /// No description provided for @chooseCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Category'**
+  String get chooseCategory;
+
+  /// No description provided for @expense.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense'**
+  String get expense;
+
+  /// No description provided for @income.
+  ///
+  /// In en, this message translates to:
+  /// **'Income'**
+  String get income;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

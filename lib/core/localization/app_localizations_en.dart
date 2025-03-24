@@ -66,4 +66,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get signUpHighlight => 'Sign up.';
+
+  @override
+  String get accountDetails => 'Account Details';
+
+  @override
+  String get saveChanges => 'Save Changes';
+
+  @override
+  String get changePassword => 'Change Password';
+
+  @override
+  String get currentPassword => 'Current Password';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get leavingMessage => 'Oh no! You’re leaving...\nAre you sure?';
+
+  @override
+  String get justKidding => 'Naah, Just Kidding';
+
+  @override
+  String get confirmLogout => 'Yes, Log Me Out';
+
+  @override
+  String get signOut => 'Sign Out';
+
+  @override
+  String get addIncome => 'Add Income';
+
+  @override
+  String get howMuchReceived => 'How much did you receive today?';
+
+  @override
+  String get add => 'Add';
+
+  @override
+  String get addExpense => 'Add Expense';
+
+  @override
+  String get howMuchSpent => 'How much did you spend today?';
+
+  @override
+  String get forWhat => 'For what?';
+
+  @override
+  String get chooseCategory => 'Choose Category';
+
+  @override
+  String get expense => 'Expense';
+
+  @override
+  String get income => 'Income';
 }

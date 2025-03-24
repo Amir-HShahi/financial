@@ -1,17 +1,17 @@
-import 'package:financial/core/utils/design_colors.dart';
-import 'package:financial/presentation/widgets/customized_button.dart';
-import 'package:financial/presentation/widgets/rounded_background_box.dart';
-import 'package:financial/presentation/widgets/titled_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/localization/app_localizations.dart';
+import '../../core/utils/design_colors.dart';
 import '../../core/utils/scale.dart';
 import '../../service/localization_handler.dart';
+import '../widgets/customized_button.dart';
 import '../widgets/customized_text_field.dart';
+import '../widgets/rounded_background_box.dart';
+import '../widgets/titled_app_bar.dart';
 
-class AccountDetails extends StatelessWidget {
-  const AccountDetails({super.key});
+class ChangePassword extends StatelessWidget {
+  const ChangePassword({super.key});
 
   void pressSaveHandler() {}
 
@@ -19,29 +19,38 @@ class AccountDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     AppLocalizations locale = LocalizationHandler.getLocale(context);
 
-    final nameController = TextEditingController();
-    final emailController = TextEditingController();
+    final currentPassController = TextEditingController();
+    final newPassController = TextEditingController();
+    final confirmPassController = TextEditingController();
 
     return Scaffold(
       backgroundColor: DesignColors.deepDarkBlue,
-      appBar: TitledAppBar(title: locale.accountDetails),
+      appBar: TitledAppBar(title: locale.changePassword),
       extendBodyBehindAppBar: false,
       body: RoundedBackgroundBox(
         child: Column(
           children: [
-            /// full name
+            /// current pass
             CustomizedTextField(
-              controller: nameController,
-              title: locale.fullName,
-              hintText: '',
+              controller: currentPassController,
+              title: locale.currentPassword,
+              hintText: locale.password,
             ),
             SizedBox(height: Scale.height(24)),
 
-            /// email
+            /// new pass
             CustomizedTextField(
-              controller: emailController,
-              title: locale.email,
-              hintText: locale.enterEmailHint,
+              controller: newPassController,
+              title: locale.newPassword,
+              hintText: locale.newPassword,
+            ),
+            SizedBox(height: Scale.height(24)),
+
+            /// confirm pass
+            CustomizedTextField(
+              controller: confirmPassController,
+              title: locale.confirmPassword,
+              hintText: locale.confirmPassword,
             ),
             const Spacer(),
 
