@@ -12,9 +12,11 @@ class RoundedBackgroundBox extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      padding: EdgeInsets.symmetric(
-        horizontal: Scale.width(24),
-        vertical: Scale.height(32),
+      padding: EdgeInsets.only(
+        left: Scale.width(24),
+        right: Scale.width(24),
+        top: Scale.height(40),
+        bottom: Scale.height(32),
       ),
       decoration: BoxDecoration(
         color: DesignColors.backgroundColor,

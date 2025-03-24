@@ -6,15 +6,16 @@ import '../../core/utils/scale.dart';
 /// A widget that displays a circular profile image surrounded by a border.
 /// Currently, the profile image is represented by a red placeholder. todo
 class ProfileImageWidget extends StatelessWidget {
-  const ProfileImageWidget({super.key});
+  final double size;
+  const ProfileImageWidget({super.key, required this.size});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       // Setting the height and width of the outer circle
-      height: Scale.height(64),
-      width: Scale.height(64),
-      padding: EdgeInsets.all(Scale.height(2)),
+      height: size,
+      width: size,
+      padding: EdgeInsets.all(Scale.height(3)),
       decoration: BoxDecoration(
         // Circular shape with a custom border
         shape: BoxShape.circle,

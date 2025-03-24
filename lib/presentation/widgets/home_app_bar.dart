@@ -64,7 +64,7 @@ class HomeAppBar extends PreferredSize {
                      ),
                    ],
                  ),
-                 ProfileImageWidget(),
+                 ProfileImageWidget(size: Scale.height(64),),
                ],
              ),
            ),

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../../core/localization/app_localizations.dart';
 import '../../core/utils/design_colors.dart';
 import '../../core/utils/scale.dart';
-import '../widgets/home_app_bar.dart';
 import '../widgets/customized_bottom_navigation_bar.dart';
+import '../widgets/home_app_bar.dart';
 import '../widgets/transaction_cards.dart';
 
 class Home extends StatelessWidget {
@@ -31,7 +31,9 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: CustomizedBottomNavigationBar(),
+      bottomNavigationBar: CustomizedBottomNavigationBar(
+        state: NavigationCurrentState.home,
+      ),
     );
   }
 }

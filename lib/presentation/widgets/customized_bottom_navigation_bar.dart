@@ -6,11 +6,26 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/utils/design_colors.dart';
 import '../../core/utils/scale.dart';
 
+enum NavigationCurrentState { home, profile }
+
 class CustomizedBottomNavigationBar extends StatelessWidget {
-  const CustomizedBottomNavigationBar({super.key});
+  final NavigationCurrentState state;
+  const CustomizedBottomNavigationBar({super.key, required this.state});
 
   @override
   Widget build(BuildContext context) {
+    void pushToHomeScreen() {
+      if (state == NavigationCurrentState.profile) {
+        Navigator.pushNamed(context, '/home');
+      }
+    }
+
+    void pushToProfileScreen() {
+      if (state == NavigationCurrentState.home) {
+        Navigator.pushNamed(context, '/profile');
+      }
+    }
+
     return SafeArea(
       child: Stack(
         alignment: Alignment.topCenter,
@@ -35,17 +50,27 @@ class CustomizedBottomNavigationBar extends StatelessWidget {
           PositionedDirectional(
             start: Scale.width(48),
             bottom: Scale.height(30),
-            child: SvgPicture.asset(
-              'assets/icons/navigation_home_enabled.svg',
-              height: Scale.height(24),
+            child: GestureDetector(
+              onTap: pushToHomeScreen,
+              child: SvgPicture.asset(
+                state == NavigationCurrentState.home
+                    ? 'assets/icons/navigation_home_enabled.svg'
+                    : 'assets/icons/navigation_home_disabled.svg',
+                height: Scale.height(24),
+              ),
             ),
           ),
           Positioned(
             right: Scale.width(48),
             bottom: Scale.height(30),
-            child: SvgPicture.asset(
-              'assets/icons/navigation_profile_disabled.svg',
-              height: Scale.height(24),
+            child: GestureDetector(
+              onTap: pushToProfileScreen,
+              child: SvgPicture.asset(
+                state == NavigationCurrentState.profile
+                    ? 'assets/icons/navigation_profile_enabled.svg'
+                    : 'assets/icons/navigation_profile_disabled.svg',
+                height: Scale.height(24),
+              ),
             ),
           ),
         ],
