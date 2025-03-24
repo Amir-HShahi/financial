@@ -1,10 +1,10 @@
-import 'package:financial/view/utility/design_colors.dart';
-import 'package:financial/view/utility/scale.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../model/budget_model.dart';
-import '../../model/transaction_model.dart';
+import '../../core/utils/scale.dart';
+import '../../domain/entities/budget_model.dart';
+import '../../domain/entities/transaction_model.dart';
+import '../../core/utils/design_colors.dart';
 import 'expense_card.dart';
 
 class TransactionCards extends StatefulWidget {

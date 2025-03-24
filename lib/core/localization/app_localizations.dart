@@ -110,6 +110,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Have a nice day!'**
   String get haveANiceDay;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get createAccount;
+
+  /// No description provided for @fillInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill your information below or register\nwith your social account'**
+  String get fillInformation;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @enterEmailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get enterEmailHint;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @passwordConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Password Confirmation'**
+  String get passwordConfirmation;
+
+  /// No description provided for @signUpButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get signUpButton;
+
+  /// No description provided for @orSignUpWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Or sign up with'**
+  String get orSignUpWith;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signIn;
+
+  /// No description provided for @welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi! Welcome back, you’ve been missed'**
+  String get welcomeBack;
+
+  /// No description provided for @rememberMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember me'**
+  String get rememberMe;
+
+  /// No description provided for @signInButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get signInButton;
+
+  /// No description provided for @orSignInWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Or sign in with'**
+  String get orSignInWith;
+
+  /// No description provided for @pushToCreateAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don’t have account? Sign up.'**
+  String get pushToCreateAccount;
+
+  /// No description provided for @signUpHighlight.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up.'**
+  String get signUpHighlight;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

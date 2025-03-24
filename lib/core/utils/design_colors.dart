@@ -10,4 +10,5 @@ abstract class DesignColors {
   static const Color white = Color(0xffffffff);
   static const Color red = Color(0xffC70600);
   static const Color cyan = Color(0xff3D9CFB);
+  static const Color grey = Color(0xffB8B8B8);
 }

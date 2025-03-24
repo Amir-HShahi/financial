@@ -1,6 +1,7 @@
 import 'package:financial/core/utils/design_colors.dart';
 import 'package:financial/core/utils/scale.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AuthorizationTitleWidget extends StatelessWidget {
   final String title;
@@ -18,7 +19,7 @@ class AuthorizationTitleWidget extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
+          style: GoogleFonts.montserrat(
             fontWeight: FontWeight.w700,
             fontSize: Scale.height(24),
             color: DesignColors.cyan,
@@ -27,7 +28,8 @@ class AuthorizationTitleWidget extends StatelessWidget {
         SizedBox(height: Scale.height(8)),
         Text(
           subTitle,
-          style: TextStyle(
+          textAlign: TextAlign.center,
+          style: GoogleFonts.montserrat(
             fontWeight: FontWeight.w500,
             fontSize: Scale.height(14),
             color: DesignColors.deepDarkBlue.withValues(alpha: 0.6),

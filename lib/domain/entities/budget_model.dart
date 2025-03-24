@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:financial/model/transaction_model.dart';
+import 'package:financial/domain/entities/transaction_model.dart';
 
 class BudgetModel {
   final int id = 1; // todo

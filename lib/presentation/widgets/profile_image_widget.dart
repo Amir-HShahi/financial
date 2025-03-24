@@ -1,6 +1,7 @@
-import 'package:financial/view/utility/design_colors.dart';
-import 'package:financial/view/utility/scale.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/utils/design_colors.dart';
+import '../../core/utils/scale.dart';
 
 /// A widget that displays a circular profile image surrounded by a border.
 /// Currently, the profile image is represented by a red placeholder. todo

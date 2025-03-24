@@ -1,11 +1,12 @@
-import 'package:financial/localization/app_localizations.dart';
 import 'package:financial/service/localization_handler.dart';
-import 'package:financial/view/components/customized_app_bar.dart';
-import 'package:financial/view/components/customized_bottom_navigation_bar.dart';
-import 'package:financial/view/components/transaction_cards.dart';
-import 'package:financial/view/utility/design_colors.dart';
-import 'package:financial/view/utility/scale.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/localization/app_localizations.dart';
+import '../../core/utils/design_colors.dart';
+import '../../core/utils/scale.dart';
+import '../widgets/customized_app_bar.dart';
+import '../widgets/customized_bottom_navigation_bar.dart';
+import '../widgets/transaction_cards.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

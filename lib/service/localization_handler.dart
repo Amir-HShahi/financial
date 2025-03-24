@@ -1,5 +1,6 @@
-import 'package:financial/localization/app_localizations.dart';
 import 'package:flutter/cupertino.dart';
+
+import '../core/localization/app_localizations.dart';
 
 /// A utility class that handles localization-related operations
 abstract class LocalizationHandler {

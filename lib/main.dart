@@ -1,10 +1,12 @@
-import 'package:financial/localization/app_localizations.dart';
+import 'package:financial/presentation/pages/signup.dart';
 import 'package:financial/service/root_jailbreak_detection.dart';
-import 'package:financial/view/home.dart';
-import 'package:financial/view/utility/scale.dart';
 import 'package:flutter/material.dart';
 
+import 'core/localization/app_localizations.dart';
+import 'core/utils/scale.dart';
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   RootJailbreakDetection.handleSecurity();
   runApp(const MyApp());
 }
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Home(),
+      home: Signup(),
     );
   }
 }

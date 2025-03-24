@@ -15,6 +15,7 @@ class WaveBackground extends StatelessWidget {
             Align(
               alignment: AlignmentDirectional.topEnd,
               child: Image(
+                matchTextDirection: true,
                 image: AssetImage('assets/images/wave_background_header.png'),
                 height: Scale.height(210),
               ),
@@ -22,6 +23,7 @@ class WaveBackground extends StatelessWidget {
             Align(
               alignment: AlignmentDirectional.bottomStart,
               child: Image(
+                matchTextDirection: true,
                 image: AssetImage('assets/images/wave_background_footer.png'),
                 height: Scale.height(120),
               ),

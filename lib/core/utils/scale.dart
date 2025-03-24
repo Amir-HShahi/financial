@@ -13,7 +13,10 @@ abstract class Scale {
 
   static void initScreenData(BuildContext context) {
     final screenData = MediaQuery.of(context);
-    final screenHeight = screenData.size.height - screenData.padding.top - 16;
+    final screenHeight =
+        screenData.size.height -
+        screenData.padding.top -
+        screenData.padding.bottom;
     final screenWidth = screenData.size.width;
 
     // initialize scale

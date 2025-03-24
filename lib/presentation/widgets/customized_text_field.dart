@@ -2,12 +2,14 @@ import 'package:financial/core/utils/design_colors.dart';
 import 'package:financial/core/utils/scale.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomizedTextField extends StatefulWidget {
   final TextEditingController controller;
-  final bool? toggleableVisibility;
+  final bool toggleableVisibility;
   final String title;
   final String hintText;
+
   const CustomizedTextField({
     super.key,
     required this.controller,
@@ -31,16 +33,16 @@ class _CustomizedTextFieldState extends State<CustomizedTextField> {
 
   @override
   Widget build(BuildContext context) {
-    final fontSize = Scale.height(16);
+    final fontSize = Scale.height(14);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           widget.title,
-          style: TextStyle(
+          style: GoogleFonts.poppins(
             fontWeight: FontWeight.w500,
-            fontSize: Scale.height(18),
+            fontSize: Scale.height(16),
             height: 1,
             color: DesignColors.deepDarkBlue,
           ),
@@ -50,7 +52,7 @@ class _CustomizedTextFieldState extends State<CustomizedTextField> {
           controller: widget.controller,
           cursorColor: DesignColors.grey,
           obscureText: isVisible,
-          style: TextStyle(
+          style: GoogleFonts.poppins(
             fontSize: fontSize,
             height: 1,
             fontWeight: FontWeight.w500,
@@ -58,9 +60,19 @@ class _CustomizedTextFieldState extends State<CustomizedTextField> {
           ),
           decoration: InputDecoration(
             isDense: true,
-            suffix: _Suffix(
-              isVisible: isVisible,
-              toggleVisibility: toggleVisibility,
+            suffix:
+                widget.toggleableVisibility
+                    ? _Suffix(
+                      isVisible: isVisible,
+                      toggleVisibility: toggleVisibility,
+                      size: fontSize,
+                    )
+                    : null,
+            suffixIconConstraints: BoxConstraints(
+              minHeight: fontSize,
+              minWidth: fontSize,
+              maxWidth: fontSize,
+              maxHeight: fontSize,
             ),
             contentPadding: EdgeInsets.symmetric(
               horizontal: Scale.width(16),
@@ -68,8 +80,8 @@ class _CustomizedTextFieldState extends State<CustomizedTextField> {
             ),
             fillColor: DesignColors.white,
             constraints: BoxConstraints(
-              maxHeight: Scale.height(40),
-              minHeight: Scale.height(40),
+              maxHeight: Scale.height(42),
+              minHeight: Scale.height(42),
               minWidth: Scale.width(345),
               maxWidth: Scale.width(345),
             ),
@@ -116,7 +128,7 @@ class _CustomizedTextFieldState extends State<CustomizedTextField> {
               borderRadius: BorderRadius.all(Radius.circular(Scale.height(16))),
             ),
             hintText: widget.hintText,
-            hintStyle: TextStyle(
+            hintStyle: GoogleFonts.poppins(
               fontSize: fontSize,
               height: 1,
               fontWeight: FontWeight.w500,
@@ -132,16 +144,27 @@ class _CustomizedTextFieldState extends State<CustomizedTextField> {
 class _Suffix extends StatelessWidget {
   final bool isVisible;
   final Function() toggleVisibility;
-  const _Suffix({required this.isVisible, required this.toggleVisibility});
+  final double size;
+  const _Suffix({
+    required this.isVisible,
+    required this.toggleVisibility,
+    required this.size,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: toggleVisibility,
-      child: SvgPicture.asset(
-        isVisible ? 'assets/icons/closed_eye.svg' : 'assets/icons/open_eye.svg',
-        height: Scale.height(14),
+      child: SizedBox(
+        height: size,
+        width: size,
+        child: SvgPicture.asset(
+          isVisible
+              ? 'assets/icons/closed_eye.svg'
+              : 'assets/icons/open_eye.svg',
+          height: Scale.height(16),
+        ),
       ),
     );
   }
