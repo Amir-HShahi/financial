@@ -1,5 +1,5 @@
+import 'package:financial/presentation/pages/account_details.dart';
 import 'package:financial/presentation/pages/login.dart';
-import 'package:financial/presentation/pages/signup.dart';
 import 'package:financial/service/root_jailbreak_detection.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Login(),
+      home: AccountDetails(),
     );
   }
 }

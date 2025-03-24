@@ -17,14 +17,14 @@ import '../../core/utils/scale.dart';
 /// )
 /// ```
 ///
-class CustomizedAppBar extends PreferredSize {
+class HomeAppBar extends PreferredSize {
   /// The greeting text to be displayed at the top.
   final String sayHello;
 
   /// A secondary message to inspire or greet the user.
   final String haveANiceDay;
 
-  CustomizedAppBar({
+  HomeAppBar({
     super.key,
     required this.sayHello,
     required this.haveANiceDay,
