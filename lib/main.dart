@@ -1,4 +1,6 @@
 import 'package:financial/presentation/pages/account_details.dart';
+import 'package:financial/presentation/pages/add_expense.dart';
+import 'package:financial/presentation/pages/add_income.dart';
 import 'package:financial/presentation/pages/change_password.dart';
 import 'package:financial/presentation/pages/login.dart';
 import 'package:financial/service/root_jailbreak_detection.dart';
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: ChangePassword(),
+      home: AddIncome(),
     );
   }
 }
