@@ -1,32 +1,34 @@
-import 'package:financial/core/localization/app_localizations.dart';
-import 'package:financial/core/utils/design_colors.dart';
-import 'package:financial/core/utils/scale.dart';
-import 'package:financial/presentation/widgets/authorization_button.dart';
-import 'package:financial/presentation/widgets/authorization_title_widget.dart';
-import 'package:financial/presentation/widgets/customized_button.dart';
-import 'package:financial/presentation/widgets/customized_text_field.dart';
-import 'package:financial/presentation/widgets/dash_hint.dart';
-import 'package:financial/presentation/widgets/wave_background.dart';
-import 'package:financial/service/localization_handler.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:highlight_text/highlight_text.dart';
 
-class Signup extends StatelessWidget {
-  const Signup({super.key});
+import '../../core/localization/app_localizations.dart';
+import '../../core/utils/design_colors.dart';
+import '../../core/utils/scale.dart';
+import '../../service/localization_handler.dart';
+import '../widgets/authorization_button.dart';
+import '../widgets/authorization_title_widget.dart';
+import '../widgets/customized_button.dart';
+import '../widgets/customized_text_field.dart';
+import '../widgets/dash_hint.dart';
+import '../widgets/wave_background.dart';
 
-  void signupHandler() {}
+class Login extends StatelessWidget {
+  const Login({super.key});
 
-  void googleSignupHandler() {}
+  void loginHandler() {}
+
+  void googleLoginHandler() {}
+
+  void pushToSignupScreen() {}
 
   @override
   Widget build(BuildContext context) {
     AppLocalizations locale = LocalizationHandler.getLocale(context);
 
-    final nameController = TextEditingController();
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
-    final confirmPassController = TextEditingController();
 
     return Scaffold(
       backgroundColor: DesignColors.backgroundColor,
@@ -38,18 +40,10 @@ class Signup extends StatelessWidget {
             children: [
               SizedBox(height: Scale.height(130), width: double.infinity),
               AuthorizationTitleWidget(
-                title: locale.createAccount,
-                subTitle: locale.fillInformation,
+                title: locale.signIn,
+                subTitle: locale.welcomeBack,
               ),
               SizedBox(height: Scale.height(32)),
-
-              /// full name
-              CustomizedTextField(
-                controller: nameController,
-                title: locale.fullName,
-                hintText: '',
-              ),
-              SizedBox(height: Scale.height(24)),
 
               /// email
               CustomizedTextField(
@@ -66,23 +60,14 @@ class Signup extends StatelessWidget {
                 hintText: locale.password,
                 toggleableVisibility: true,
               ),
-              SizedBox(height: Scale.height(24)),
+              SizedBox(height: Scale.height(84)),
 
-              /// password confirm
-              CustomizedTextField(
-                controller: confirmPassController,
-                title: locale.passwordConfirmation,
-                hintText: locale.password,
-                toggleableVisibility: true,
-              ),
-              SizedBox(height: Scale.height(48)),
-
-              /// sign up button
+              /// sign in button
               CustomizedButton(
-                onPressed: signupHandler,
+                onPressed: loginHandler,
                 disabled: false,
                 title: Text(
-                  locale.signUpButton,
+                  locale.signInButton,
                   style: GoogleFonts.poppins(
                     color: DesignColors.white,
                     height: 1,
@@ -94,21 +79,54 @@ class Signup extends StatelessWidget {
               SizedBox(height: Scale.height(32)),
 
               /// hint
-              DashHint(title: locale.orSignUpWith),
+              DashHint(title: locale.orSignInWith),
               SizedBox(height: Scale.height(32)),
 
               /// google auth
               AuthorizationButton(
-                onPressed: googleSignupHandler,
+                onPressed: googleLoginHandler,
                 child: SvgPicture.asset(
                   'assets/icons/google.svg',
                   height: Scale.height(24),
                 ),
               ),
+              SizedBox(height: Scale.height(32)),
+
+              /// push to sign up
+              _PushToSignup(onTap: pushToSignupScreen),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class _PushToSignup extends StatelessWidget {
+  final Function() onTap;
+  const _PushToSignup({required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    AppLocalizations locale = LocalizationHandler.getLocale(context);
+
+    return TextHighlight(
+      text: locale.pushToCreateAccount,
+      textStyle: GoogleFonts.roboto(
+        color: DesignColors.deepDarkBlue,
+        fontWeight: FontWeight.w400,
+        fontSize: Scale.height(14),
+      ),
+      words: {
+        locale.signUpHighlight: HighlightedWord(
+          onTap: onTap,
+          textStyle: GoogleFonts.roboto(
+            color: DesignColors.cyan,
+            fontWeight: FontWeight.w400,
+            fontSize: Scale.height(14),
+          ),
+        ),
+      },
     );
   }
 }

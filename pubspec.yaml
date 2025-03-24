@@ -20,6 +20,7 @@ dependencies:
   flutter_bloc: ^9.1.0
   root_jailbreak_sniffer: ^1.1.0
   google_fonts: ^6.2.1
+  highlight_text: ^1.8.0
 
 dev_dependencies:
   flutter_test:
