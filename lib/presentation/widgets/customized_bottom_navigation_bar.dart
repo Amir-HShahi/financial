@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:financial/presentation/widgets/transaction_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,13 +17,13 @@ class CustomizedBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     void pushToHomeScreen() {
       if (state == NavigationCurrentState.profile) {
-        Navigator.pushNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/home');
       }
     }
 
     void pushToProfileScreen() {
       if (state == NavigationCurrentState.home) {
-        Navigator.pushNamed(context, '/profile');
+        Navigator.pushReplacementNamed(context, '/profile');
       }
     }
 
@@ -31,20 +32,21 @@ class CustomizedBottomNavigationBar extends StatelessWidget {
         alignment: Alignment.topCenter,
         children: [
           // Basic blur effect
-          BackdropFilter(
-            filter: ImageFilter.blur(
-              sigmaX: 10.0, // Horizontal blur amount
-              sigmaY: 10.0, // Vertical blur amount
-            ),
-            child: Container(
-              height: Scale.height(84),
-              color: Colors.transparent,
-              // Your content here
+          SizedBox(
+            height: Scale.height(110),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: 10.0, // Horizontal blur amount
+                sigmaY: 10.0, // Vertical blur amount
+              ),
             ),
           ),
-          Image(
-            image: AssetImage('assets/images/navigation_background.png'),
-            width: Scale.width(375),
+          Positioned(
+            bottom: Scale.height(0),
+            child: Image(
+              image: AssetImage('assets/images/navigation_background.png'),
+              width: Scale.width(375),
+            ),
           ),
           Positioned(bottom: Scale.height(44), child: _AddButton()),
           PositionedDirectional(
@@ -84,17 +86,29 @@ class _AddButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Scale.height(64),
-      width: Scale.height(64),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: DesignColors.deepDarkBlue,
-      ),
-      child: Icon(
-        Icons.add_rounded,
-        size: Scale.height(32),
-        color: DesignColors.backgroundColor,
+    void showTransactionTypeDialog() {
+      showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return TransactionBottomSheet();
+        },
+      );
+    }
+
+    return GestureDetector(
+      onTap: showTransactionTypeDialog,
+      child: Container(
+        height: Scale.height(64),
+        width: Scale.height(64),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: DesignColors.deepDarkBlue,
+        ),
+        child: Icon(
+          Icons.add_rounded,
+          size: Scale.height(32),
+          color: DesignColors.backgroundColor,
+        ),
       ),
     );
   }

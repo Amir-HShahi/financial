@@ -1,5 +1,5 @@
-import 'package:financial/presentation/pages/add_income.dart';
-import 'package:financial/presentation/pages/profile.dart';
+import 'package:financial/core/constants/app_routes.dart';
+import 'package:financial/presentation/pages/home.dart';
 import 'package:financial/service/root_jailbreak_detection.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Profile(),
+      routes: AppRoutes.routes,
+      home: Home(),
     );
   }
 }

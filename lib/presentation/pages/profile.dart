@@ -20,8 +20,13 @@ class Profile extends StatelessWidget {
     final fullName = 'John Restive';
     final email = 'john1234@gmail.com';
 
-    void pushToAccountDetails() {}
-    void pushToChangePassword() {}
+    void pushToAccountDetails() {
+      Navigator.pushNamed(context, '/account_details');
+    }
+
+    void pushToChangePassword() {
+      Navigator.pushNamed(context, '/change_password');
+    }
     void signOutHandler() {}
 
     return Scaffold(
