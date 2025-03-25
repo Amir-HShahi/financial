@@ -41,6 +41,8 @@ class TransactionBottomSheet extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(32)),
             ),
           ),
+
+          /// add expense
           GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTap: pushToAddExpense,
@@ -59,11 +61,15 @@ class TransactionBottomSheet extends StatelessWidget {
               ),
             ),
           ),
+
+          /// divider
           Container(
             height: Scale.height(1),
             width: double.infinity,
             decoration: BoxDecoration(color: Color(0xffECECEC)),
           ),
+
+          /// add income
           GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTap: pushToAddIncome,

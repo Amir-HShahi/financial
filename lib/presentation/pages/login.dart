@@ -66,7 +66,7 @@ class Login extends StatelessWidget {
               CustomizedButton(
                 onPressed: loginHandler,
                 disabled: false,
-                title: Text(
+                child: Text(
                   locale.signInButton,
                   style: GoogleFonts.poppins(
                     color: DesignColors.white,

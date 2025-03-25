@@ -57,7 +57,7 @@ class ChangePassword extends StatelessWidget {
             /// save button
             CustomizedButton(
               onPressed: pressSaveHandler,
-              title: Text(
+              child: Text(
                 locale.saveChanges,
                 style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w500,

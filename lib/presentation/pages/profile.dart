@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/customized_bottom_navigation_bar.dart';
+import '../widgets/sign_out_dialog.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -27,7 +28,28 @@ class Profile extends StatelessWidget {
     void pushToChangePassword() {
       Navigator.pushNamed(context, '/change_password');
     }
-    void signOutHandler() {}
+
+    void signOutHandler() {
+      showGeneralDialog(
+        context: context,
+        barrierLabel: "Barrier",
+        barrierDismissible: true,
+        transitionDuration: Duration(milliseconds: 150),
+        pageBuilder: (context, animation, secondAnimation) {
+          return SignOutDialog();
+        },
+        transitionBuilder: (context, animation, secondAnimation, child) {
+          /// adjust pop animation
+          return ScaleTransition(
+            scale: CurvedAnimation(
+              parent: animation,
+              curve: Curves.fastEaseInToSlowEaseOut,
+            ),
+            child: FadeTransition(opacity: animation, child: child),
+          );
+        },
+      );
+    }
 
     return Scaffold(
       backgroundColor: DesignColors.deepDarkBlue,

@@ -41,7 +41,7 @@ class AddIncome extends StatelessWidget {
             /// add button
             CustomizedButton(
               onPressed: pressAddHandler,
-              title: Text(
+              child: Text(
                 locale.add,
                 style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w500,

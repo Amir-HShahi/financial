@@ -81,7 +81,7 @@ class Signup extends StatelessWidget {
               CustomizedButton(
                 onPressed: signupHandler,
                 disabled: false,
-                title: Text(
+                child: Text(
                   locale.signUpButton,
                   style: GoogleFonts.poppins(
                     color: DesignColors.white,
