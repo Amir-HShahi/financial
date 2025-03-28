@@ -1,15 +1,17 @@
-abstract class RemoteApi {
+import 'package:financial/domain/entities/user_profile.dart';
+
+abstract class UserApi {
   Future<void> userLogin(String email, String password);
 
   Future<void> userLoginGoogle(String accessToken, String code, String idToken);
 
   Future<void> userLogout();
 
-  Future<void> getUserProfile();
+  Future<UserProfile> getUserProfile();
 
-  Future<void> putUserProfile();
+  Future<UserProfile> putUserProfile();
 
-  Future<void> patchUserProfile();
+  Future<UserProfile> patchUserProfile();
 
   Future<void> userRegister();
 
