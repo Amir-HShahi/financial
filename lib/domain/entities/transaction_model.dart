@@ -1,4 +1,4 @@
-import 'category_model.dart';
+import '../../data/models/category_model.dart';
 
 enum TransactionType { income, expense }
 
