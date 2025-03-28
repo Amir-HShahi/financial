@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../data/utils/design_colors.dart';
 import '../../data/utils/scale.dart';
 import '../../domain/entities/category.dart';
-import '../../domain/entities/transaction_model.dart';
+import '../../domain/entities/transaction.dart';
 import 'expense_card.dart';
 
 class TransactionCards extends StatefulWidget {
