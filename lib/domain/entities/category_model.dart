@@ -2,12 +2,15 @@ import 'dart:ui';
 
 import 'package:financial/domain/entities/transaction_model.dart';
 
-class BudgetModel {
-  final int id = 1; // todo
+class CategoryModel {
   final String title;
   final Color color;
-  double amount = 0;
+  final String iconPath;
   List<TransactionModel> transactions = [];
 
-  BudgetModel({required this.title, required this.color});
+  CategoryModel({
+    required this.title,
+    required this.color,
+    required this.iconPath,
+  });
 }

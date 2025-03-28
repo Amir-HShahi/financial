@@ -1,13 +1,13 @@
-import 'package:financial/core/utils/design_colors.dart';
 import 'package:financial/presentation/widgets/customized_button.dart';
 import 'package:financial/presentation/widgets/rounded_background_box.dart';
 import 'package:financial/presentation/widgets/titled_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../core/localization/app_localizations.dart';
-import '../../core/utils/scale.dart';
-import '../../service/localization_handler.dart';
+import '../../data/constants/localization/app_localizations.dart';
+import '../../data/repositories/localization_handler.dart';
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
 import '../widgets/customized_text_field.dart';
 
 class AccountDetails extends StatelessWidget {

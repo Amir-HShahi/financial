@@ -1,8 +1,8 @@
 import 'package:financial/presentation/widgets/profile_image_widget.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../core/utils/design_colors.dart';
-import '../../core/utils/scale.dart';
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
 
 /// ### Parameters:
 /// - [sayHello]: A required string to represent the main greeting text.

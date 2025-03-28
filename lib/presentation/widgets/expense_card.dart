@@ -2,8 +2,9 @@ import 'package:financial/domain/entities/transaction_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../core/utils/design_colors.dart';
-import '../../core/utils/scale.dart';
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
+
 
 class ExpenseCard extends StatefulWidget {
   final TransactionModel expenseModel;

@@ -1,12 +1,13 @@
 import 'dart:ui';
 
-import 'package:financial/core/localization/app_localizations.dart';
-import 'package:financial/core/utils/design_colors.dart';
-import 'package:financial/core/utils/scale.dart';
 import 'package:financial/presentation/widgets/customized_button.dart';
-import 'package:financial/service/localization_handler.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../data/constants/localization/app_localizations.dart';
+import '../../data/repositories/localization_handler.dart';
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
 
 class SignOutDialog extends StatelessWidget {
   const SignOutDialog({super.key});

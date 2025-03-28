@@ -4,8 +4,9 @@ import 'package:financial/presentation/widgets/transaction_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../core/utils/design_colors.dart';
-import '../../core/utils/scale.dart';
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
+
 
 enum NavigationCurrentState { home, profile }
 

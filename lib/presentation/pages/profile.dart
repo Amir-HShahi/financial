@@ -1,13 +1,13 @@
-import 'package:financial/core/localization/app_localizations.dart';
-import 'package:financial/core/utils/design_colors.dart';
-import 'package:financial/core/utils/scale.dart';
 import 'package:financial/presentation/widgets/profile_image_widget.dart';
 import 'package:financial/presentation/widgets/profile_option_tile.dart';
 import 'package:financial/presentation/widgets/rounded_background_box.dart';
-import 'package:financial/service/localization_handler.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../data/constants/localization/app_localizations.dart';
+import '../../data/repositories/localization_handler.dart';
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
 import '../widgets/customized_bottom_navigation_bar.dart';
 import '../widgets/sign_out_dialog.dart';
 

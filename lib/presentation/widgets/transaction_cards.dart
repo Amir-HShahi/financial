@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../core/utils/scale.dart';
-import '../../domain/entities/budget_model.dart';
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
+import '../../domain/entities/category_model.dart';
 import '../../domain/entities/transaction_model.dart';
-import '../../core/utils/design_colors.dart';
 import 'expense_card.dart';
 
 class TransactionCards extends StatefulWidget {
@@ -62,9 +62,9 @@ class _TransactionCardsState extends State<TransactionCards> {
           expenseModel: TransactionModel(
             amount: 50,
             title: 'Shampoo',
-            category: BudgetModel(
+            category: CategoryModel(
               title: 'Healthcare',
-              color: Color(0xff89FF72),
+              color: Color(0xff89FF72), iconPath: '',
             ),
             date: DateTime(2025, 2, 6),
             transactionType: TransactionType.expense,

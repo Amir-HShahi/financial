@@ -1,6 +1,7 @@
-import 'package:financial/core/utils/design_colors.dart';
-import 'package:financial/core/utils/scale.dart';
 import 'package:flutter/material.dart';
+
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
 
 class CustomizedButton extends StatelessWidget {
   final Function() onPressed;

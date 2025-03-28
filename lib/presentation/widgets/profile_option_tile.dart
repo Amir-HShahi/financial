@@ -1,8 +1,9 @@
-import 'package:financial/core/utils/design_colors.dart';
-import 'package:financial/core/utils/scale.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
 
 class ProfileOptionTile extends StatelessWidget {
   final Function() onTap;

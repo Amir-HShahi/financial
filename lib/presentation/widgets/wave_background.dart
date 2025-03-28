@@ -1,5 +1,6 @@
-import 'package:financial/core/utils/scale.dart';
 import 'package:flutter/cupertino.dart';
+
+import '../../data/utils/scale.dart';
 
 class WaveBackground extends StatelessWidget {
   final Widget child;

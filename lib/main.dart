@@ -1,10 +1,10 @@
-import 'package:financial/core/constants/app_routes.dart';
+import 'package:financial/data/repositories/root_jailbreak_detection.dart';
 import 'package:financial/presentation/pages/home.dart';
-import 'package:financial/service/root_jailbreak_detection.dart';
 import 'package:flutter/material.dart';
 
-import 'core/localization/app_localizations.dart';
-import 'core/utils/scale.dart';
+import 'data/constants/localization/app_localizations.dart';
+import 'data/utils/app_routes.dart';
+import 'data/utils/scale.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

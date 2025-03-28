@@ -1,4 +1,4 @@
-import 'budget_model.dart';
+import 'category_model.dart';
 
 enum TransactionType { income, expense }
 
@@ -6,7 +6,7 @@ class TransactionModel {
   final int id = 1; // todo
   final int amount;
   final String title;
-  final BudgetModel category;
+  final CategoryModel category;
   final DateTime date;
   final TransactionType transactionType;
 

@@ -1,16 +1,17 @@
-import 'package:financial/core/localization/app_localizations.dart';
-import 'package:financial/core/utils/design_colors.dart';
-import 'package:financial/core/utils/scale.dart';
 import 'package:financial/presentation/widgets/authorization_button.dart';
 import 'package:financial/presentation/widgets/authorization_title_widget.dart';
 import 'package:financial/presentation/widgets/customized_button.dart';
 import 'package:financial/presentation/widgets/customized_text_field.dart';
 import 'package:financial/presentation/widgets/dash_hint.dart';
 import 'package:financial/presentation/widgets/wave_background.dart';
-import 'package:financial/service/localization_handler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../data/constants/localization/app_localizations.dart';
+import '../../data/repositories/localization_handler.dart';
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});

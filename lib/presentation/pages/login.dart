@@ -3,10 +3,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:highlight_text/highlight_text.dart';
 
-import '../../core/localization/app_localizations.dart';
-import '../../core/utils/design_colors.dart';
-import '../../core/utils/scale.dart';
-import '../../service/localization_handler.dart';
+import '../../data/constants/localization/app_localizations.dart';
+import '../../data/repositories/localization_handler.dart';
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
 import '../widgets/authorization_button.dart';
 import '../widgets/authorization_title_widget.dart';
 import '../widgets/customized_button.dart';

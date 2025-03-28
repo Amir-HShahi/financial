@@ -1,7 +1,8 @@
-import 'package:financial/core/utils/design_colors.dart';
-import 'package:financial/core/utils/scale.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../data/utils/design_colors.dart';
+import '../../data/utils/scale.dart';
 
 class AuthorizationTitleWidget extends StatelessWidget {
   final String title;
