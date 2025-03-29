@@ -1,3 +1,4 @@
+import 'package:financial/data/repositories/local_auth_handler.dart';
 import 'package:flutter/material.dart';
 import '../../data/constants/localization/app_localizations.dart';
 import '../../data/repositories/localization_handler.dart';
