@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../data/constants/localization/app_localizations.dart';
 import '../../data/repositories/localization_handler.dart';
 import '../../data/utils/design_colors.dart';
@@ -10,6 +9,7 @@ import '../widgets/transaction_cards.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
+
 
   @override
   Widget build(BuildContext context) {
