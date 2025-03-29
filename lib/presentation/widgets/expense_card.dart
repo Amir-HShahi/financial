@@ -1,7 +1,7 @@
-import 'package:financial/domain/entities/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../data/models/transaction_model.dart';
 import '../../data/utils/design_colors.dart';
 import '../../data/utils/scale.dart';
 
@@ -92,7 +92,7 @@ class _ExpenseCardState extends State<ExpenseCard> {
                   width: maxHeight,
                   margin: EdgeInsetsDirectional.only(end: Scale.width(8)),
                   decoration: BoxDecoration(
-                    color: widget.expenseModel.category.color.withValues(
+                    color: Color(0xff89FF72).withValues(
                       alpha: 0.2,
                     ),
                     borderRadius: BorderRadius.all(

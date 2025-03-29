@@ -1,24 +1,24 @@
 import 'dart:async';
 
-import 'package:financial/domain/entities/category.dart';
-import 'package:financial/domain/entities/transaction.dart';
+import '../../../data/models/category_model.dart';
+import '../../../data/models/transaction_model.dart';
 
 abstract class FinanceApi {
-  Future<List<Transaction>> getAllTransactions();
+  final String financePath = '/finance/';
 
-  Future<void> postTransaction(Transaction transaction);
+  Future<List<TransactionModel>> getAllTransactions();
 
-  Future<Transaction> getTransaction(int id);
+  Future<void> postTransaction(TransactionModel transaction);
+
+  Future<TransactionModel> getTransaction(int id);
 
   Future<void> deleteTransaction(int id);
 
-  Future<void> updateTransaction(Transaction transaction);
+  Future<void> increaseBudget(CategoryModel category);
 
-  Future<void> increaseBudget(Category category);
+  Future<void> decreaseBudget(CategoryModel category);
 
-  Future<void> decreaseBudget(Category category);
+  Future<List<CategoryModel>> getAllCategories();
 
-  Future<List<Category>> getAllCategories();
-
-  Future<Category> getCategory(int id);
+  Future<CategoryModel> getCategory(int id);
 }

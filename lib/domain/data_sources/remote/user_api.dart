@@ -1,19 +1,21 @@
-import 'package:financial/domain/entities/user_profile.dart';
+import '../../../data/models/auth_token_model.dart';
+import '../../../data/models/register_request_model.dart';
+import '../../../data/models/user_profile_model.dart';
 
 abstract class UserApi {
+  final String userPath = '/user/';
+
   Future<void> userLogin(String email, String password);
 
   Future<void> userLoginGoogle(String accessToken, String code, String idToken);
 
-  Future<void> userLogout();
+  Future<void> userLogout(AuthTokenModel token);
 
-  Future<UserProfile> getUserProfile();
+  Future<UserProfileModel> getUserProfile();
 
-  Future<UserProfile> putUserProfile();
+  Future<void> putUserProfile(UserProfileModel model);
 
-  Future<UserProfile> patchUserProfile();
+  Future<void> userRegister(RegisterRequestModel registerRequest);
 
-  Future<void> userRegister();
-
-  Future<String> userTokenRefresh();
+  Future<AuthTokenModel> userTokenRefresh(AuthTokenModel token);
 }

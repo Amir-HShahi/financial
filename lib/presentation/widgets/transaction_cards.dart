@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../data/models/category_model.dart';
+import '../../data/models/transaction_model.dart';
 import '../../data/utils/design_colors.dart';
 import '../../data/utils/scale.dart';
-import '../../domain/entities/category.dart';
 import '../../domain/entities/transaction.dart';
 import 'expense_card.dart';
 
@@ -60,14 +61,20 @@ class _TransactionCardsState extends State<TransactionCards> {
         SizedBox(height: Scale.height(16)),
         ExpenseCard(
           expenseModel: TransactionModel(
-            amount: 50,
-            title: 'Shampoo',
-            category: CategoryModel(
-              title: 'Healthcare',
-              color: Color(0xff89FF72), iconPath: '',
+            1,
+            'Shampoo',
+            TransactionType.expense,
+            CategoryModel(
+              1,
+              'Healthcare',
+              100,
+              50,
+              // color: Color(0xff89FF72),
+              // iconPath: '',
             ),
-            date: DateTime(2025, 2, 6),
-            transactionType: TransactionType.expense,
+            DateTime(2025, 2, 6),
+            50,
+            1,
           ),
           toggleSelectingState: toggleSelectingState,
         ),
