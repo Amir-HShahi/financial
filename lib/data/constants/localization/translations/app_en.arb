@@ -1,0 +1,51 @@
+{
+  "helloWorld": "Hello World!",
+  "sayHello": "Hello, {name}!",
+  "@sayHello": {
+    "description": "home page app bar hello to user",
+    "placeHolders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "haveANiceDay": "Have a nice day!",
+  "@haveANiceDay": {
+    "description": "home page app bar greeting to user"
+  },
+  "createAccount": "Create Account",
+  "fillInformation": "Fill your information below or register\nwith your social account",
+  "fullName": "Full Name",
+  "email": "Email",
+  "enterEmailHint": "Enter your email",
+  "password": "Password",
+  "passwordConfirmation": "Password Confirmation",
+  "signUpButton": "Sign up",
+  "orSignUpWith": "Or sign up with",
+  "signIn": "Sign In",
+  "welcomeBack": "Hi! Welcome back, you’ve been missed",
+  "rememberMe": "Remember me",
+  "signInButton": "Sign in",
+  "orSignInWith": "Or sign in with",
+  "pushToCreateAccount": "Don’t have account? Sign up.",
+  "signUpHighlight": "Sign up.",
+  "accountDetails": "Account Details",
+  "saveChanges": "Save Changes",
+  "changePassword": "Change Password",
+  "currentPassword": "Current Password",
+  "newPassword": "New Password",
+  "confirmPassword": "Confirm Password",
+  "leavingMessage": "Oh no! You’re leaving...\nAre you sure?",
+  "justKidding": "Naah, Just Kidding",
+  "confirmLogout": "Yes, Log Me Out",
+  "signOut": "Sign Out",
+  "addIncome": "Add Income",
+  "howMuchReceived": "How much did you receive today?",
+  "add": "Add",
+  "addExpense": "Add Expense",
+  "howMuchSpent": "How much did you spend today?",
+  "forWhat": "For what?",
+  "chooseCategory": "Choose Category",
+  "expense": "Expense",
+  "income": "Income"
+}

@@ -1,0 +1,34 @@
+name: Flutter
+
+on: # Runs this action when you push on master
+  push:
+    branches: [ "master" ]
+  # Runs this when a PR against master is created
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  flutter_job:
+
+    # because we will be also building for iOS
+    runs-on: macos-latest
+
+    steps:
+
+      # Clones the project on the machine
+      - uses: actions/checkout@v4
+
+#      # Installs flutter and related dependency on this machine
+#      - name: Setup Flutter
+#        uses: subosito/flutter-action@v2
+#        with:
+#          channel: 'stable'
+#
+#      # Fetches proj dependencies from pub
+#      - name: Install dependencies
+#        run: flutter pub get
+#
+#      # Fetches proj dependencies from pub
+#      - name: Install dependencies
+#        run: flutter pub get
+
