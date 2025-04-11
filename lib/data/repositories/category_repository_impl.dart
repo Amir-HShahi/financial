@@ -1,34 +1,44 @@
-import 'package:financial/data/data_sources/local/hive_database_impl.dart';
 import 'package:financial/data/models/category_model.dart';
-import 'package:financial/domain/data_sources/local/hive_database.dart';
-import 'package:financial/domain/repositories/categoty_repository.dart';
+import 'package:financial/domain/repositories/category_repository.dart';
 import 'package:hive/hive.dart';
 
-class CategoryRepositoryImpl implements CategoryRepository{
-  final HiveDatabaseImpl hive;
+import '../../domain/repositories/dependency_injector.dart';
+import '../data_sources/local/hive_database_impl.dart';
+
+class CategoryRepositoryImpl implements CategoryRepository {
   late final Box box;
-  CategoryRepositoryImpl(this.hive);
+  CategoryRepositoryImpl() {
+    loadBox();
+  }
 
   @override
   CategoryModel get({required int id}) {
-    // TODO: implement get
-    throw UnimplementedError();
+    var json = box.get(id);
+    return CategoryModel.fromJson(json);
   }
 
   @override
   List<CategoryModel> getAll() {
-    // TODO: implement getAll
-    throw UnimplementedError();
+    List<CategoryModel> models = [];
+    for (int i = 0; i < box.length; i++) {
+      CategoryModel model = CategoryModel.fromJson(box.getAt(i));
+      models.add(model);
+    }
+    return models;
   }
 
   @override
-  void initialize() {
-
-  }
+  void initialize() {}
 
   @override
   void updateCategory({required CategoryModel category}) {
-    // TODO: implement updateCategory
+    var json = category.toJson();
+    box.put(category.id, json);
   }
 
+  @override
+  void loadBox() async {
+    var db = DependencyInjector.locator<HiveDatabaseImpl>();
+    box = await db.getCategoriesBox();
+  }
 }

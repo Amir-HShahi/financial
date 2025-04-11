@@ -8,4 +8,6 @@ abstract class CategoryRepository {
   void initialize();
 
   void updateCategory({required CategoryModel category});
+
+  void loadBox();
 }
