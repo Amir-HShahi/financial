@@ -52,66 +52,68 @@ class Login extends StatelessWidget {
       body: WaveBackground(
         child: SafeArea(
           bottom: true,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(height: Scale.height(130), width: double.infinity),
-              AuthorizationTitleWidget(
-                title: locale.signIn,
-                subTitle: locale.welcomeBack,
-              ),
-              SizedBox(height: Scale.height(32)),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(height: Scale.height(130), width: double.infinity),
+                AuthorizationTitleWidget(
+                  title: locale.signIn,
+                  subTitle: locale.welcomeBack,
+                ),
+                SizedBox(height: Scale.height(32)),
 
-              /// email
-              CustomizedTextField(
-                controller: emailController,
-                title: locale.email,
-                hintText: locale.enterEmailHint,
-              ),
-              SizedBox(height: Scale.height(24)),
+                /// email
+                CustomizedTextField(
+                  controller: emailController,
+                  title: locale.email,
+                  hintText: locale.enterEmailHint,
+                ),
+                SizedBox(height: Scale.height(24)),
 
-              /// password
-              CustomizedTextField(
-                controller: passwordController,
-                title: locale.password,
-                hintText: locale.password,
-                toggleableVisibility: true,
-              ),
-              SizedBox(height: Scale.height(84)),
+                /// password
+                CustomizedTextField(
+                  controller: passwordController,
+                  title: locale.password,
+                  hintText: locale.password,
+                  toggleableVisibility: true,
+                ),
+                SizedBox(height: Scale.height(84)),
 
-              /// sign in button
-              CustomizedButton(
-                onPressed: loginHandler,
-                disabled: false,
-                child: Text(
-                  locale.signInButton,
-                  style: GoogleFonts.poppins(
-                    color: DesignColors.white,
-                    height: 1,
-                    fontSize: Scale.height(16),
-                    fontWeight: FontWeight.w500,
+                /// sign in button
+                CustomizedButton(
+                  onPressed: loginHandler,
+                  disabled: false,
+                  child: Text(
+                    locale.signInButton,
+                    style: GoogleFonts.poppins(
+                      color: DesignColors.white,
+                      height: 1,
+                      fontSize: Scale.height(16),
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: Scale.height(32)),
+                SizedBox(height: Scale.height(32)),
 
-              /// hint
-              DashHint(title: locale.orSignInWith),
-              SizedBox(height: Scale.height(32)),
+                /// hint
+                DashHint(title: locale.orSignInWith),
+                SizedBox(height: Scale.height(32)),
 
-              /// google auth
-              AuthorizationButton(
-                onPressed: googleLoginHandler,
-                child: SvgPicture.asset(
-                  'assets/icons/google.svg',
-                  height: Scale.height(24),
+                /// google auth
+                AuthorizationButton(
+                  onPressed: googleLoginHandler,
+                  child: SvgPicture.asset(
+                    'assets/icons/google.svg',
+                    height: Scale.height(24),
+                  ),
                 ),
-              ),
-              SizedBox(height: Scale.height(32)),
+                SizedBox(height: Scale.height(32)),
 
-              /// push to sign up
-              _PushToSignup(onTap: pushToSignupScreen),
-            ],
+                /// push to sign up
+                _PushToSignup(onTap: pushToSignupScreen),
+              ],
+            ),
           ),
         ),
       ),

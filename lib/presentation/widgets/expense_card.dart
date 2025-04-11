@@ -42,7 +42,7 @@ class _ExpenseCardState extends State<ExpenseCard> {
   Widget build(BuildContext context) {
     String title = widget.expenseModel.title;
 
-    String categoryTitle = widget.expenseModel.categoryId.toString();
+    String categoryTitle = "health";
 
     String date = DateFormat('yyyy/MM/dd').format(widget.expenseModel.date);
 

@@ -29,7 +29,7 @@ class ProfileImageWidget extends StatelessWidget {
       child: ClipOval(
         child: Container(
           // Placeholder for the profile image (currently a red circle)
-          color: Colors.red,
+          color: DesignColors.grey,
           height: Scale.height(30), // Placeholder's height
           width: Scale.height(30), // Placeholder's width
         ),
