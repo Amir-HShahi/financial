@@ -3,8 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../data/constants/localization/app_localizations.dart';
 import '../../data/repositories/localization_handler.dart';
+import '../../data/repositories/screenshot_handler.dart';
 import '../../data/utils/design_colors.dart';
 import '../../data/utils/scale.dart';
+import '../../domain/repositories/dependency_injector.dart';
 import '../widgets/customized_button.dart';
 import '../widgets/customized_text_field.dart';
 import '../widgets/rounded_background_box.dart';
@@ -15,8 +17,14 @@ class ChangePassword extends StatelessWidget {
 
   void pressSaveHandler() {}
 
+  void disableScreenshot() {
+    var handler = DependencyInjector.locator<ScreenshotHandler>();
+    handler.disableScreenshot();
+  }
+
   @override
   Widget build(BuildContext context) {
+    disableScreenshot();
     AppLocalizations locale = LocalizationHandler.getLocale(context);
 
     final currentPassController = TextEditingController();

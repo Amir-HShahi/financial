@@ -8,12 +8,14 @@ part of 'auth_token_model.dart';
 
 AuthTokenModel _$AuthTokenModelFromJson(Map<String, dynamic> json) =>
     AuthTokenModel(
-      json['access_token'] as String,
-      json['refresh_token'] as String,
+      json['secure_r_s_a_key'] as String,
+      json['secure_r_s_a_iv'] as String,
+      json['hive_key'] as String,
     );
 
 Map<String, dynamic> _$AuthTokenModelToJson(AuthTokenModel instance) =>
     <String, dynamic>{
-      'access_token': instance.accessToken,
-      'refresh_token': instance.refreshToken,
+      'secure_r_s_a_key': instance.secureRSAKey,
+      'secure_r_s_a_iv': instance.secureRSAIv,
+      'hive_key': instance.hiveKey,
     };

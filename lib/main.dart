@@ -1,4 +1,5 @@
 import 'package:financial/data/repositories/root_jailbreak_detection.dart';
+import 'package:financial/domain/repositories/dependency_injector.dart';
 import 'package:financial/presentation/pages/home.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ import 'data/utils/scale.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   RootJailbreakDetection.handleSecurity();
+  DependencyInjector.setUpLocator();
   runApp(const MyApp());
 }
 

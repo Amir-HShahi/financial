@@ -10,8 +10,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../data/constants/localization/app_localizations.dart';
 import '../../data/repositories/localization_handler.dart';
+import '../../data/repositories/screenshot_handler.dart';
 import '../../data/utils/design_colors.dart';
 import '../../data/utils/scale.dart';
+import '../../domain/repositories/dependency_injector.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -20,8 +22,14 @@ class Signup extends StatelessWidget {
 
   void googleSignupHandler() {}
 
+  void disableScreenshot() {
+    var handler = DependencyInjector.locator<ScreenshotHandler>();
+    handler.disableScreenshot();
+  }
+
   @override
   Widget build(BuildContext context) {
+    disableScreenshot();
     AppLocalizations locale = LocalizationHandler.getLocale(context);
 
     final nameController = TextEditingController();

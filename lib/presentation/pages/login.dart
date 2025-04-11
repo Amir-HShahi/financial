@@ -5,8 +5,10 @@ import 'package:highlight_text/highlight_text.dart';
 
 import '../../data/constants/localization/app_localizations.dart';
 import '../../data/repositories/localization_handler.dart';
+import '../../data/repositories/screenshot_handler.dart';
 import '../../data/utils/design_colors.dart';
 import '../../data/utils/scale.dart';
+import '../../domain/repositories/dependency_injector.dart';
 import '../widgets/authorization_button.dart';
 import '../widgets/authorization_title_widget.dart';
 import '../widgets/customized_button.dart';
@@ -23,8 +25,14 @@ class Login extends StatelessWidget {
 
   void pushToSignupScreen() {}
 
+  void disableScreenshot() {
+    var handler = DependencyInjector.locator<ScreenshotHandler>();
+    handler.disableScreenshot();
+  }
+
   @override
   Widget build(BuildContext context) {
+    disableScreenshot();
     AppLocalizations locale = LocalizationHandler.getLocale(context);
 
     final emailController = TextEditingController();

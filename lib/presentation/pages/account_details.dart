@@ -1,3 +1,5 @@
+import 'package:financial/data/repositories/screenshot_handler.dart';
+import 'package:financial/domain/repositories/dependency_injector.dart';
 import 'package:financial/presentation/widgets/customized_button.dart';
 import 'package:financial/presentation/widgets/rounded_background_box.dart';
 import 'package:financial/presentation/widgets/titled_app_bar.dart';
@@ -15,8 +17,14 @@ class AccountDetails extends StatelessWidget {
 
   void pressSaveHandler() {}
 
+  void disableScreenshot() {
+    var handler = DependencyInjector.locator<ScreenshotHandler>();
+    handler.disableScreenshot();
+  }
+
   @override
   Widget build(BuildContext context) {
+    disableScreenshot();
     AppLocalizations locale = LocalizationHandler.getLocale(context);
 
     final nameController = TextEditingController();
