@@ -7,5 +7,7 @@ abstract class TransactionRepository {
 
   void delete({required int id});
 
-  void getCategoryTransaction({required int categoryId});
+  List<TransactionModel> getCategoryTransactions({required int categoryId});
+
+  void loadBox();
 }

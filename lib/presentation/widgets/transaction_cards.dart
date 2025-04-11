@@ -1,3 +1,4 @@
+import 'package:financial/domain/entities/category.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -66,7 +67,7 @@ class _TransactionCardsState extends State<TransactionCards> {
             TransactionType.expense,
             CategoryModel(
               1,
-              'Healthcare',
+              Categories.health,
               100,
               50,
               // color: Color(0xff89FF72),
@@ -74,7 +75,6 @@ class _TransactionCardsState extends State<TransactionCards> {
             ),
             DateTime(2025, 2, 6),
             50,
-            1,
           ),
           toggleSelectingState: toggleSelectingState,
         ),
