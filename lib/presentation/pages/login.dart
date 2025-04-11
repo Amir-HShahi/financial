@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:highlight_text/highlight_text.dart';
 
 import '../../data/constants/localization/app_localizations.dart';
+import '../../data/repositories/authorization_impl.dart';
 import '../../data/repositories/localization_handler.dart';
 import '../../data/repositories/screenshot_handler.dart';
 import '../../data/utils/design_colors.dart';
@@ -19,8 +20,6 @@ import '../widgets/wave_background.dart';
 class Login extends StatelessWidget {
   const Login({super.key});
 
-  void loginHandler() {}
-
   void googleLoginHandler() {}
 
   void pushToSignupScreen() {}
@@ -33,6 +32,16 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     disableScreenshot();
+
+    void done() {
+      Navigator.pushNamed(context, '/home');
+    }
+
+    void loginHandler() {
+      var handler = DependencyInjector.locator<AuthorizationImpl>();
+      handler.login(done: done);
+    }
+
     AppLocalizations locale = LocalizationHandler.getLocale(context);
 
     final emailController = TextEditingController();

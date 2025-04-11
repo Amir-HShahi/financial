@@ -1,3 +1,4 @@
+import 'package:financial/data/repositories/authorization_impl.dart';
 import 'package:financial/presentation/widgets/authorization_button.dart';
 import 'package:financial/presentation/widgets/authorization_title_widget.dart';
 import 'package:financial/presentation/widgets/customized_button.dart';
@@ -18,8 +19,6 @@ import '../../domain/repositories/dependency_injector.dart';
 class Signup extends StatelessWidget {
   const Signup({super.key});
 
-  void signupHandler() {}
-
   void googleSignupHandler() {}
 
   void disableScreenshot() {
@@ -30,6 +29,16 @@ class Signup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     disableScreenshot();
+
+    void done() {
+      Navigator.pushNamed(context, '/home');
+    }
+
+    void signupHandler() {
+      var handler = DependencyInjector.locator<AuthorizationImpl>();
+      handler.login(done: done);
+    }
+
     AppLocalizations locale = LocalizationHandler.getLocale(context);
 
     final nameController = TextEditingController();

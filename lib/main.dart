@@ -1,6 +1,6 @@
 import 'package:financial/data/repositories/root_jailbreak_detection.dart';
 import 'package:financial/domain/repositories/dependency_injector.dart';
-import 'package:financial/presentation/pages/home.dart';
+import 'package:financial/presentation/pages/login.dart';
 import 'package:flutter/material.dart';
 
 import 'data/constants/localization/app_localizations.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       routes: AppRoutes.routes,
-      home: Home(),
+      home: Login(),
     );
   }
 }
