@@ -11,10 +11,9 @@ class TransactionModel extends Transaction {
     super.id,
     super.title,
     super.transactionType,
-    super.category,
+    super.categoryId,
     super.date,
     super.amount,
-    super.user,
   );
 
   factory TransactionModel.fromJson(Map<String, dynamic> json) =>

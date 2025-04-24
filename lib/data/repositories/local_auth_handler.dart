@@ -15,7 +15,7 @@ class LocalAuthHandler implements LocalAuth {
         options: const AuthenticationOptions(stickyAuth: true),
       );
       return authenticated;
-    } on PlatformException {
+    } on PlatformException catch (e) {
       return authenticated;
     }
   }

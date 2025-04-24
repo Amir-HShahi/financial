@@ -1,3 +1,4 @@
+import 'package:financial/data/repositories/authorization_impl.dart';
 import 'package:financial/presentation/widgets/authorization_button.dart';
 import 'package:financial/presentation/widgets/authorization_title_widget.dart';
 import 'package:financial/presentation/widgets/customized_button.dart';
@@ -10,18 +11,34 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../data/constants/localization/app_localizations.dart';
 import '../../data/repositories/localization_handler.dart';
+import '../../data/repositories/screenshot_handler.dart';
 import '../../data/utils/design_colors.dart';
 import '../../data/utils/scale.dart';
+import '../../domain/repositories/dependency_injector.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
 
-  void signupHandler() {}
-
   void googleSignupHandler() {}
+
+  void disableScreenshot() {
+    var handler = DependencyInjector.locator<ScreenshotHandler>();
+    handler.disableScreenshot();
+  }
 
   @override
   Widget build(BuildContext context) {
+    disableScreenshot();
+
+    void done() {
+      Navigator.pushNamed(context, '/home');
+    }
+
+    void signupHandler() {
+      var handler = DependencyInjector.locator<AuthorizationImpl>();
+      handler.login(done: done);
+    }
+
     AppLocalizations locale = LocalizationHandler.getLocale(context);
 
     final nameController = TextEditingController();

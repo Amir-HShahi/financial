@@ -1,7 +1,7 @@
+import 'package:financial/presentation/widgets/shimmer_expense_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../data/models/category_model.dart';
 import '../../data/models/transaction_model.dart';
 import '../../data/utils/design_colors.dart';
 import '../../data/utils/scale.dart';
@@ -17,6 +17,7 @@ class TransactionCards extends StatefulWidget {
 
 class _TransactionCardsState extends State<TransactionCards> {
   bool isSelecting = false;
+  bool isLoading = true;
 
   void toggleSelectingState(bool isSelecting) {
     setState(() {
@@ -36,49 +37,61 @@ class _TransactionCardsState extends State<TransactionCards> {
     });
   }
 
+  Future<void> awaiting() async {
+    await Future.delayed(Duration(seconds: 4));
+    setState(() {
+      isLoading = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'Transactions',
-              style: TextStyle(
-                color: DesignColors.deepDarkBlue,
-                fontWeight: FontWeight.w500,
-                fontSize: Scale.height(16),
-                height: 1,
+    awaiting();
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Transactions',
+                style: TextStyle(
+                  color: DesignColors.deepDarkBlue,
+                  fontWeight: FontWeight.w500,
+                  fontSize: Scale.height(16),
+                  height: 1,
+                ),
               ),
-            ),
-            isSelecting
-                ? _DeleteButton(deleteHandler: deleteHandler)
-                : _SelectButton(selectHandler: selectHandler),
-          ],
-        ),
-        SizedBox(height: Scale.height(16)),
-        ExpenseCard(
-          expenseModel: TransactionModel(
-            1,
-            'Shampoo',
-            TransactionType.expense,
-            CategoryModel(
-              1,
-              'Healthcare',
-              100,
-              50,
-              // color: Color(0xff89FF72),
-              // iconPath: '',
-            ),
-            DateTime(2025, 2, 6),
-            50,
-            1,
+              isSelecting
+                  ? _DeleteButton(deleteHandler: deleteHandler)
+                  : _SelectButton(selectHandler: selectHandler),
+            ],
           ),
-          toggleSelectingState: toggleSelectingState,
-        ),
-      ],
+          SizedBox(height: Scale.height(16)),
+          isLoading
+              ? Column(
+                children: [
+                  for (int i = 0; i < 5; i++)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: ShimmerExpenseCard(),
+                    ),
+                ],
+              )
+              : ExpenseCard(
+                expenseModel: TransactionModel(
+                  1,
+                  'Shampoo',
+                  TransactionType.expense,
+                  1,
+                  DateTime(2025, 2, 6),
+                  50,
+                ),
+                toggleSelectingState: toggleSelectingState,
+              ),
+        ],
+      ),
     );
   }
 }

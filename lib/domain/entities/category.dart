@@ -12,10 +12,17 @@ enum Categories {
 }
 
 abstract class Category {
-  int id;
-  String title;
+  final int id;
+  final Categories title;
+  final List<int> transactionsId;
   double budget;
   double availableAmount;
 
-  Category(this.id, this.title, this.budget, this.availableAmount);
+  Category(
+    this.id,
+    this.title,
+    this.budget,
+    this.availableAmount,
+    this.transactionsId,
+  );
 }

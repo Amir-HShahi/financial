@@ -1,6 +1,7 @@
 class AuthToken {
-  String accessToken;
-  String refreshToken;
+  String secureRSAKey;
+  String secureRSAIv;
+  String hiveKey;
 
-  AuthToken(this.accessToken, this.refreshToken);
+  AuthToken(this.secureRSAKey, this.secureRSAIv, this.hiveKey);
 }

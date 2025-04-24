@@ -1,23 +1,19 @@
-import '../../data/models/category_model.dart';
-
 enum TransactionType { income, expense }
 
 abstract class Transaction {
-  int id;
-  String title;
-  TransactionType transactionType;
-  CategoryModel category;
-  DateTime date;
-  int amount;
-  int user;
+  final int id;
+  final String title;
+  final TransactionType transactionType;
+  final int categoryId;
+  final DateTime date;
+  final int amount;
 
   Transaction(
     this.id,
     this.title,
     this.transactionType,
-    this.category,
+    this.categoryId,
     this.date,
     this.amount,
-    this.user,
   );
 }

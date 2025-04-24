@@ -5,7 +5,7 @@ part 'auth_token_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class AuthTokenModel extends AuthToken {
-  AuthTokenModel(super.accessToken, super.refreshToken);
+  AuthTokenModel(super.secureRSAKey, super.secureRSAIv, super.hiveKey);
 
   factory AuthTokenModel.fromJson(Map<String, dynamic> json) =>
       _$AuthTokenModelFromJson(json);
